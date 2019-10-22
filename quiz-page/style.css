@@ -54,9 +54,7 @@ input:focus {
 }
 
 #rightOrWrong {
-	color: black;
 	font-family: 'Lobster', cursive;
-	font-size: 40px;
 	line-height: .3;
 }
 

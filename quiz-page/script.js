@@ -8,31 +8,31 @@
 
 
 //MULTIPLE CHOICE
-// const questions =[
-// 	{q: "What color is the sky? \n (a) blue \n (b) red \n (c) purple",
-// 	a: "a"
-// 	},
-// 	{q: "Which of these animals barks? \n (a) cat \n (b) bird \n (c) dog",
-// 	a: "c"
-// 	},
-// 	{q: "What is the capitol of the USA? \n (a) Tokyo \n (b) Sydney \n (c) Washington D.C.",
-// 	a: "c"
-// 	}
-// ];
+const questions =[
+	{q: "What color is the sky? \n (a) blue \n (b) red \n (c) purple",
+	a: "a"
+	},
+	{q: "Which of these animals barks? \n (a) cat \n (b) bird \n (c) dog",
+	a: "c"
+	},
+	{q: "What is the capitol of the USA? \n (a) Tokyo \n (b) Sydney \n (c) Washington D.C.",
+	a: "c"
+	}
+];
 
 
 //NO MULTIPLE CHOICE
-const questions = [
-	{q: "What color is the sky?",
-	a: "blue"
-	},
-	{q: "What animal barks?",
-	a: "dog"
-	},
-	{q: "What does NYC stand for?",
-	a: "New York City"
-	}
-];
+// const questions = [
+// 	{q: "What color is the sky?",
+// 	a: "blue"
+// 	},
+// 	{q: "What does NYC stand for?",
+// 	a: "New York City"
+// 	},
+// 	{q: "What animal barks?",
+// 	a: "dog"
+// 	}
+// ];
 
 let questionSection = document.querySelector("#questionSection");
 let rightOrWrong = document.querySelector("#rightOrWrong");
