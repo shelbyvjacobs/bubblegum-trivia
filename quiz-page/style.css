@@ -5,3 +5,7 @@
 input {
 	width: 200px;
 }
+
+#rightOrWrong {
+	color: black;
+}

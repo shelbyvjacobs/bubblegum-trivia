@@ -19,26 +19,39 @@ const questions =[
 ];
 
 let questionSection = document.querySelector("#questionSection");
+let rightOrWrong = document.querySelector("#rightOrWrong");
 
 let score = 0;
 
 const form = document.querySelector('#form')
 
-for (let i=0; i<questions.length; i++){
-	questionSection.innerText = questions[i].q;
-	form.addEventListener("submit", function(evt){
-		evt.preventDefault();
-		let response = evt.target.querySelector("#answer");
-		if (response == questions[i].a){
-			score++
-			console.log("Correct!");
-		} else {
-			console.log("Wrong!");
-		}
-	})
-	// let currentQuestion = document.createElement("H3");
-	// currentQuestion.innerText = response;
-	// questionSection.innerText = "There should be a question here!"
-};
+function askQuestion () {
+	for (let i=0; i<questions.length; i++){
+		// console.log(questions[i].q);
+		questionSection.innerText = questions[i].q; //for some reason on the last question is showing.
+		//are all of the questions just simultaneously/very rapidly .innerText-ing, and I only see the last one because that's where it stops?
+		checkAnswer();
+	}
+}
+askQuestion();
 
-console.log("You got " + score + "/" + questions.length + " correct!");
+function checkAnswer () {
+	for (let i=0; i<questions.length; i++){
+		form.addEventListener("submit", function(evt){
+			evt.preventDefault();
+			let response = evt.target.querySelector("#response").value;
+			if (response == questions[i].a){
+				score++
+				rightOrWrong.style.color = "green"
+				rightOrWrong.innerText = "Correct!"
+			} else {
+				rightOrWrong.style.color = "red"
+				rightOrWrong.innerText = "Wrong!"
+			}
+		})
+	}
+}
+// checkAnswer();
+
+// console.log("You got " + score + "/" + questions.length + " correct!");
+
