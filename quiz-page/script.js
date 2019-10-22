@@ -40,7 +40,7 @@ function checkAnswer () {
 		form.addEventListener("submit", function(evt){
 			evt.preventDefault();
 			let response = evt.target.querySelector("#response").value;
-			if (response == questions[i].a){
+			if (response.toLowerCase() == questions[i].a.toLowerCase()){
 				score++
 				rightOrWrong.style.color = "green"
 				rightOrWrong.innerText = "Correct!"
