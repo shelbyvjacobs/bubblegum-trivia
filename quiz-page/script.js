@@ -48,38 +48,51 @@ function startGame () {
 	mainGame.classList.remove("hide");
 }
 
-function askQuestion () {
-	for (let i=0; i<questions.length; i++){
-		questionSection.innerText = questions[i].q;
-		//for some reason on the last question is showing.
-		//all of the questions just simultaneously/very rapidly .innerText-ing, and I only see the last one because that's where it stops...
-		//console shows all of the questions!
-		checkAnswer();
-	}
-}
-askQuestion();
+i = 0;
+
+// function askQuestion () {
+// 	for (let i=0; i<questions.length; i++){
+// 		questionSection.innerText = questions[i].q;
+// 		//for some reason on the last question is showing.
+// 		//all of the questions just simultaneously/very rapidly .innerText-ing, and I only see the last one because that's where it stops...
+// 		//console shows all of the questions!
+// 	}
+// }
+// askQuestion();
 
 function checkAnswer () {
 	for (let i=0; i<questions.length; i++){
+		questionSection.innerText = questions[i].q;
 		form.addEventListener("submit", function(evt){
 			evt.preventDefault();
+			// console.log(evt.target.querySelector("#response").value);
 			let response = evt.target.querySelector("#response").value;
-			console.log(response); //logs 9 times??? why?
+			console.log(response); //logs 9 times??? why? 3 times for each answer
 			if (response.toLowerCase() == questions[i].a.toLowerCase()){
 				score++
 				rightOrWrong.style.color = "green"
+				rightOrWrong.style.fontSize = "40px";
 				rightOrWrong.innerText = "Correct!"
 				nextButton.classList.remove("hide");
+				//move on to next question
+			} else if (response.toLowerCase() == ""){
+				rightOrWrong.style.color = "black"
+				rightOrWrong.style.fontSize = "20px";
+				rightOrWrong.innerText = "Please enter an answer!"
 			} else {
 				rightOrWrong.style.color = "red"
+				rightOrWrong.style.fontSize = "40px";
 				rightOrWrong.innerText = "Wrong!"
 				nextButton.classList.remove("hide");
 			}
 		})
 	}
 }
-// checkAnswer();
+checkAnswer();
 
+// nextButton.addEventListener("click", function(evt){
+// 	i+=1;
+// })
 
 // trigger this only when all of the questions have been answered.
 // if (questions[i] == questions.length) {
