@@ -36,11 +36,17 @@ const questions = [
 
 let questionSection = document.querySelector("#questionSection");
 let rightOrWrong = document.querySelector("#rightOrWrong");
-const nextButton = document.querySelector("button");
-
+const nextButton = document.querySelector(".next");
+const startButton = document.querySelector(".start");
+const mainGame = document.querySelector(".mainGame");
+const form = document.querySelector('#form');
 let score = 0;
 
-const form = document.querySelector('#form')
+startButton.addEventListener("click", startGame);
+function startGame () {
+	startButton.classList.add("hide");
+	mainGame.classList.remove("hide");
+}
 
 function askQuestion () {
 	for (let i=0; i<questions.length; i++){

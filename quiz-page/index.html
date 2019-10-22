@@ -8,21 +8,24 @@
 <body>
 	<h1>Trivia Game</h1>
 	<main class="card">
-		<h3 id="questionSection">
-			<!-- insert question here -->
-		</h3>
-		<div id="form">
-			<!-- create form here -->
-			<form id="form">
-				Type the letter of your response: <br>
-				<input type="text" id="response">
-			</form>
+		<button class="start">Start</button>
+		<div class ="mainGame hide">
+			<h3 id="questionSection">
+				<!-- insert question here -->
+			</h3>
+			<div id="form">
+				<!-- create form here -->
+				<form id="form">
+					Type your answer: <br>
+					<input type="text" id="response">
+				</form>
+			</div>
+			<h3 id="rightOrWrong">
+				<!-- insert whether right or wrong here -->
+			</h3>
 		</div>
-		<h3 id="rightOrWrong">
-			<!-- insert whether right or wrong here -->
-		</h3>
-		<button class="hide">Next</button>
 	</main>
+	<button class="next hide">Next</button>
 	<script src="script.js"></script>
 </body>
 </html>
