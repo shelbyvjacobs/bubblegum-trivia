@@ -18,17 +18,27 @@ const questions =[
 	}
 ];
 
+let questionSection = document.querySelector("#questionSection");
+
 let score = 0;
 
+const form = document.querySelector('#form')
+
 for (let i=0; i<questions.length; i++){
-	//inside window.prompt is what the user will see; the question
-	let response = console.log(questions[i].q);
-	if (response = questions[i].a){
-		score++
-		console.log("Correct!");
-	}else {
-		console.log("Wrong!");
-	}
+	questionSection.innerText = questions[i].q;
+	form.addEventListener("submit", function(evt){
+		evt.preventDefault();
+		let response = evt.target.querySelector("#answer");
+		if (response == questions[i].a){
+			score++
+			console.log("Correct!");
+		} else {
+			console.log("Wrong!");
+		}
+	})
+	// let currentQuestion = document.createElement("H3");
+	// currentQuestion.innerText = response;
+	// questionSection.innerText = "There should be a question here!"
 };
 
 console.log("You got " + score + "/" + questions.length + " correct!");
