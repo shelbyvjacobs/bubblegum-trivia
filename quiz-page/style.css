@@ -3,13 +3,61 @@
 }*/
 
 * {
+	box-sizing: border-box; 
+}
+
+body {
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	background-color: black;
+}
+
+.card {
+	width: 70%;
+	min-width: 300px;
+	min-height: 400px;
+	margin: auto;
+	border-radius: 20px;
+	border: double 5px;
+	background-color: white;
+	padding: 25px;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 70px;
+	color: white;
+	line-height: .5;
 }
 
 input {
 	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border-style: dotted;
+	text-align: center;
+}
+
+#response {
+	margin: 15px;
 }
 
 #rightOrWrong {
 	color: black;
+	font-family: 'Lobster', cursive;
+	font-size: 40px;
+}
+
+button {
+	width: 150px;
+	font-size: 20px;
+	color: white;
+	background-color: black;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 15px;
+}
+
+.hide {
+	display: none;
 }
