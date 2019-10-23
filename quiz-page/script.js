@@ -5,7 +5,7 @@
 // variable response that is empty to collect the user's responses
 
 
-//MULTIPLE CHOICE; change to radio buttons?
+//MULTIPLE CHOICE; change to radio buttons? silver level
 const questions =[
 	{q: "When was bubble gum invented? \n (a) 1892 \n (b) 1928 \n (c) 1901",
 	a: "b"
@@ -32,7 +32,7 @@ startButton.addEventListener("click", startGame);
 function startGame () {
 	startButton.classList.add("hide");
 	mainGame.classList.remove("hide");
-}
+};
 
 // function askQuestion () {
 // 	for (let i=0; i<questions.length; i++){
@@ -45,59 +45,61 @@ function startGame () {
 // askQuestion();
 
 function checkAnswer (index) {
-	// for (let i=0; i<questions.length; i++){
-	// 	let j = i;
-		console.log(questions[index])
-		questionSection.innerText = questions[index].q;
-		console.log(questionSection.innerText)
-		form.addEventListener("submit", function(evt){
-			evt.preventDefault();
-			// console.log(evt.target.querySelector("#response").value);
-			let response = evt.target.querySelector("#response").value;
-			console.log(response); //logs 9 times??? why? 3 times for each answer
-			if (response.toLowerCase() == questions[index].a.toLowerCase()){
-				score++
-				rightOrWrong.style.color = "green"
-				rightOrWrong.style.fontSize = "40px";
-				rightOrWrong.innerText = "Correct!"
-				nextButton.classList.remove("hide");
-				//move on to next question
-			} else if (response.toLowerCase() == ""){
-				rightOrWrong.style.color = "black"
-				rightOrWrong.style.fontSize = "20px";
-				rightOrWrong.innerText = "Please enter an answer!"
-			} else {
-				rightOrWrong.style.color = "red"
-				rightOrWrong.style.fontSize = "40px";
-				rightOrWrong.innerText = "Wrong!"
-				nextButton.classList.remove("hide");
-			}
-		})
+	// console.log(questions[index].q)
+	questionSection.innerText = questions[index].q;
+	form.addEventListener("submit", function(evt){
+		evt.preventDefault();
+		let response = evt.target.querySelector("#response").value;
+		console.log(response); //logs 3 times for each answer
+		if (response.toLowerCase() == questions[index].a){
+			score++
+			rightOrWrong.style.color = "green"
+			rightOrWrong.style.fontSize = "40px";
+			rightOrWrong.innerText = "Correct!"
+			nextButton.classList.remove("hide");
+			//move on to next question
+		} else if (response == ""){
+			rightOrWrong.style.color = "black"
+			rightOrWrong.style.fontSize = "20px";
+			rightOrWrong.innerText = "Please enter an answer!"
+		} else {
+			rightOrWrong.style.color = "red"
+			rightOrWrong.style.fontSize = "40px";
+			rightOrWrong.innerText = "Incorrect!"
+			nextButton.classList.remove("hide");
+		}
+	})
 };
 
-
 for (let i=0; i<questions.length; i++){
-	// console.log(i);
+	console.log(i); //instantly logs every index in the array
 	// questions.forEach(checkAnswer()); //what do I pass in as a parameter?
 	checkAnswer(i);
-}
+};
 
+//next button
+nextButton.addEventListener("click", function(evt){
+	evt.preventDefault();
+	// console.log("next button clicked!")
+	//load next question; i++
+});
 
 //instructions modal
-
 const modal = document.querySelector(".modal");
 const instructions = document.querySelector(".instructions");
 
 instructions.addEventListener("click", function(evt){
 	evt.preventDefault();
-	console.log("photo clicked!");
 	modal.style.display = "block";
-})
+});
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-}}
+//close modal
+window.addEventListener("click", function(evt) {
+	evt.preventDefault();
+	if (evt.target == modal) {
+		modal.style.display = "none";
+	}
+});
 
 
 // nextButton.addEventListener("click", function(evt){
