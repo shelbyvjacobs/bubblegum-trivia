@@ -9,13 +9,13 @@
 
 //MULTIPLE CHOICE
 const questions =[
-	{q: "What color is the sky? \n (a) blue \n (b) red \n (c) purple",
+	{q: "When was bubble gum invented? \n (a) 1892 \n (b) 1928 \n (c) 1901",
+	a: "b"
+	},
+	{q: "What is the official bubble gum of Major League Baseball? \n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
 	a: "a"
 	},
-	{q: "Which of these animals barks? \n (a) cat \n (b) bird \n (c) dog",
-	a: "c"
-	},
-	{q: "What is the capitol of the USA? \n (a) Tokyo \n (b) Sydney \n (c) Washington D.C.",
+	{q: "How many tons of gum are chewed every year? \n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
 	a: "c"
 	}
 ];
@@ -48,8 +48,6 @@ function startGame () {
 	mainGame.classList.remove("hide");
 }
 
-i = 0;
-
 // function askQuestion () {
 // 	for (let i=0; i<questions.length; i++){
 // 		questionSection.innerText = questions[i].q;
@@ -60,15 +58,18 @@ i = 0;
 // }
 // askQuestion();
 
-function checkAnswer () {
-	for (let i=0; i<questions.length; i++){
-		questionSection.innerText = questions[i].q;
+function checkAnswer (index) {
+	// for (let i=0; i<questions.length; i++){
+	// 	let j = i;
+		console.log(questions[index])
+		questionSection.innerText = questions[index].q;
+		console.log(questionSection.innerText)
 		form.addEventListener("submit", function(evt){
 			evt.preventDefault();
 			// console.log(evt.target.querySelector("#response").value);
 			let response = evt.target.querySelector("#response").value;
 			console.log(response); //logs 9 times??? why? 3 times for each answer
-			if (response.toLowerCase() == questions[i].a.toLowerCase()){
+			if (response.toLowerCase() == questions[index].a.toLowerCase()){
 				score++
 				rightOrWrong.style.color = "green"
 				rightOrWrong.style.fontSize = "40px";
@@ -86,9 +87,14 @@ function checkAnswer () {
 				nextButton.classList.remove("hide");
 			}
 		})
-	}
+};
+
+
+for (let i=0; i<questions.length; i++){
+	// console.log(i);
+	questions.forEach(checkAnswer(0, ));
+	checkAnswer(i);
 }
-checkAnswer();
 
 // nextButton.addEventListener("click", function(evt){
 // 	i+=1;
