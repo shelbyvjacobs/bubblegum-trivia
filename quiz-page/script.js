@@ -79,6 +79,7 @@ function checkAnswer () {
 	nextButton.addEventListener("click", function(evt){
 		evt.preventDefault();
 		i += 1
+		console.log(i)
 		checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
 		//Clear the input box
 	})
