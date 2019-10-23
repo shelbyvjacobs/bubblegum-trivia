@@ -44,14 +44,16 @@ function startGame () {
 // }
 // askQuestion();
 
-function checkAnswer (index) {
+i=0;
+
+function checkAnswer () {
 	// console.log(questions[index].q)
-	questionSection.innerText = questions[index].q;
+	questionSection.innerText = questions[i].q;
 	form.addEventListener("submit", function(evt){
 		evt.preventDefault();
 		let response = evt.target.querySelector("#response").value;
 		console.log(response); //logs 3 times for each answer
-		if (response.toLowerCase() == questions[index].a){
+		if (response.toLowerCase() == questions[i].a){
 			score++
 			rightOrWrong.style.color = "green"
 			rightOrWrong.style.fontSize = "40px";
@@ -69,20 +71,32 @@ function checkAnswer (index) {
 			nextButton.classList.remove("hide");
 		}
 	})
+	//next button
+	nextButton.addEventListener("click", function(evt){
+		evt.preventDefault();
+		console.log("next button clicked!")
+		i += 1
+		console.log(i)
+		checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
+		//Clear the input box
+	})
 };
 
-for (let i=0; i<questions.length; i++){
+// for (let i=0; i<questions.length; i++){
 	console.log(i); //instantly logs every index in the array
 	// questions.forEach(checkAnswer()); //what do I pass in as a parameter?
-	checkAnswer(i);
-};
+	checkAnswer();
+// };
 
 //next button
-nextButton.addEventListener("click", function(evt){
-	evt.preventDefault();
-	// console.log("next button clicked!")
-	//load next question; i++
-});
+// nextButton.addEventListener("click", function(evt){
+// 	evt.preventDefault();
+// 	console.log("next button clicked!")
+// 	i += 1
+// 	console.log(i)
+// 	// console.log("next button clicked!")
+// 	//load next question; i++
+// });
 
 //instructions modal
 const modal = document.querySelector(".modal");
