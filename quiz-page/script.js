@@ -1,5 +1,3 @@
-// console.log("linked");
-
 // PSEUDOCODE
 // create the variables:
 // and array of ojects for the questions
@@ -7,7 +5,7 @@
 // variable response that is empty to collect the user's responses
 
 
-//MULTIPLE CHOICE
+//MULTIPLE CHOICE; change to radio buttons?
 const questions =[
 	{q: "When was bubble gum invented? \n (a) 1892 \n (b) 1928 \n (c) 1901",
 	a: "b"
@@ -20,20 +18,6 @@ const questions =[
 	}
 ];
 
-
-//NO MULTIPLE CHOICE
-// const questions = [
-// 	{q: "What color is the sky?",
-// 	a: "blue"
-// 	},
-// 	{q: "What does NYC stand for?",
-// 	a: "New York City"
-// 	},
-// 	{q: "What animal barks?",
-// 	a: "dog"
-// 	}
-// ];
-
 let questionSection = document.querySelector("#questionSection");
 let rightOrWrong = document.querySelector("#rightOrWrong");
 const nextButton = document.querySelector(".next");
@@ -42,6 +26,8 @@ const mainGame = document.querySelector(".mainGame");
 const form = document.querySelector('#form');
 let score = 0;
 
+
+//start the game
 startButton.addEventListener("click", startGame);
 function startGame () {
 	startButton.classList.add("hide");
@@ -92,9 +78,27 @@ function checkAnswer (index) {
 
 for (let i=0; i<questions.length; i++){
 	// console.log(i);
-	questions.forEach(checkAnswer(0, ));
+	// questions.forEach(checkAnswer()); //what do I pass in as a parameter?
 	checkAnswer(i);
 }
+
+
+//instructions modal
+
+const modal = document.querySelector(".modal");
+const instructions = document.querySelector(".instructions");
+
+instructions.addEventListener("click", function(evt){
+	evt.preventDefault();
+	console.log("photo clicked!");
+	modal.style.display = "block";
+})
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+}}
+
 
 // nextButton.addEventListener("click", function(evt){
 // 	i+=1;
