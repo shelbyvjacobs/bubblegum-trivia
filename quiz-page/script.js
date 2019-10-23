@@ -49,9 +49,24 @@ function startGame () {
 
 i=0;
 
+function nextQuestion (){
+	questionSection.innerText = questions[i].q;
+	nextButton.addEventListener("click", function(evt){
+		evt.preventDefault();
+		nextButton.classList.remove("hide");
+		i += 1
+		input.reset(); //to clear the input box; console says this is not a function
+		console.log(i)
+		checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
+		//Clear the input box
+	})
+}
+
+nextQuestion();
+
 function checkAnswer () {
 	// console.log(questions[index].q)
-	questionSection.innerText = questions[i].q;
+	// questionSection.innerText = questions[i].q;
 	rightOrWrong.innerText = "";
 	form.addEventListener("submit", function(evt){
 		evt.preventDefault();
@@ -62,7 +77,7 @@ function checkAnswer () {
 			rightOrWrong.style.color = "green"
 			rightOrWrong.style.fontSize = "40px";
 			rightOrWrong.innerText = "Correct!"
-			nextButton.classList.remove("hide");
+			// nextButton.classList.remove("hide");
 			//move on to next question
 		} else if (response == ""){
 			rightOrWrong.style.color = "black"
@@ -72,20 +87,22 @@ function checkAnswer () {
 			rightOrWrong.style.color = "red"
 			rightOrWrong.style.fontSize = "40px";
 			rightOrWrong.innerText = "Incorrect!"
-			nextButton.classList.remove("hide");
+			// nextButton.classList.remove("hide");
 		}
-	})
-	//next button
-	nextButton.addEventListener("click", function(evt){
-		evt.preventDefault();
-		i += 1
-		console.log(i)
-		checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
-		//Clear the input box
-	})
+	});
+	
+	// //next button
+	// nextButton.addEventListener("click", function(evt){
+	// 	evt.preventDefault();
+	// 	i += 1
+	// 	// form.reset(); //console says this is not a function
+	// 	console.log(i)
+	// 	checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
+	// 	//Clear the input box
+	// })
 };
 
-checkAnswer();
+// checkAnswer();
 
 //instructions modal
 instructions.addEventListener("click", function(evt){
