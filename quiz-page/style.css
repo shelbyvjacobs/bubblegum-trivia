@@ -60,27 +60,27 @@ input:focus {
 
 button {
 	font-size: 25px;
-	color: black;
+	color: white;
 	background-color: #eb7a34;
 	padding: 5px;
 	border-radius: 50%;
-	height: 100px;
-	width: 100px;
+	height: 160px;
+	width: 160px;
 	font-weight: bold;
 	border: none;
 }
 
 .start {
-	margin: 75px 15px;
+	margin: 20px;
 }
 
 .next {
 	margin: -20px 15px;
+	height: 100px;
+	width: 100px;
 }
 
 .instructions {
-	height: 180px;
-	width: 180px;
 	margin: 20px;
 }
 
@@ -101,7 +101,7 @@ button {
 	margin: 20% auto;
 	padding: 20px;
 	border-radius: 20px;
-	height: 60%;
+	height: 70%;
 	width: 70%;
 	font-size: 30px;
 }

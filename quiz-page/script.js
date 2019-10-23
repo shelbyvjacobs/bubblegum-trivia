@@ -24,6 +24,8 @@ const nextButton = document.querySelector(".next");
 const startButton = document.querySelector(".start");
 const mainGame = document.querySelector(".mainGame");
 const form = document.querySelector('#form');
+const modal = document.querySelector(".modal");
+const instructions = document.querySelector(".instructions");
 let score = 0;
 
 
@@ -31,6 +33,7 @@ let score = 0;
 startButton.addEventListener("click", startGame);
 function startGame () {
 	startButton.classList.add("hide");
+	instructions.classList.add("hide");
 	mainGame.classList.remove("hide");
 };
 
@@ -49,6 +52,7 @@ i=0;
 function checkAnswer () {
 	// console.log(questions[index].q)
 	questionSection.innerText = questions[i].q;
+	rightOrWrong.innerText = "";
 	form.addEventListener("submit", function(evt){
 		evt.preventDefault();
 		let response = evt.target.querySelector("#response").value;
@@ -74,34 +78,15 @@ function checkAnswer () {
 	//next button
 	nextButton.addEventListener("click", function(evt){
 		evt.preventDefault();
-		console.log("next button clicked!")
 		i += 1
-		console.log(i)
 		checkAnswer(); //DID I JUST MAKE A RECURSIVE FUNCTION?!
 		//Clear the input box
 	})
 };
 
-// for (let i=0; i<questions.length; i++){
-	console.log(i); //instantly logs every index in the array
-	// questions.forEach(checkAnswer()); //what do I pass in as a parameter?
-	checkAnswer();
-// };
-
-//next button
-// nextButton.addEventListener("click", function(evt){
-// 	evt.preventDefault();
-// 	console.log("next button clicked!")
-// 	i += 1
-// 	console.log(i)
-// 	// console.log("next button clicked!")
-// 	//load next question; i++
-// });
+checkAnswer();
 
 //instructions modal
-const modal = document.querySelector(".modal");
-const instructions = document.querySelector(".instructions");
-
 instructions.addEventListener("click", function(evt){
 	evt.preventDefault();
 	modal.style.display = "block";
