@@ -5,36 +5,37 @@
 // variable response that is empty to collect the user's responses
 //MULTIPLE CHOICE; change to radio buttons? silver level
 const questions =[
-	{q: "When was bubble gum invented? (1 point)\n (a) 1892 \n (b) 1928 \n (c) 1901",
-	a: "b"
+	{q: "What came first: chewing gum or bubble gum? (4 points)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
+	a: "a"
 	}, //1
 	{q: "What is the official bubble gum of Major League Baseball? (2 points)\n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
 	a: "a"
 	}, //2
-	{q: "How many tons of gum are chewed every year? (3 points)\n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
-	a: "c"
-	}, //3
-	{q: "What came first: chewing gum or bubble gum? (4 points)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
-	a: "a"
-	}, //4
-	{q: "Who invented bubble gum? \n (a) Theodore Horowitz (5 points)\n (b) Ruth Spiro \n (c) Walter Diemer",
-	a: "c"
-	}, //5
-	{q: "What was the diameter of the largest bubble gum bubble ever blown? (6 points)\n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
-	a: "a"
-	}, //6
-	{q: "Who holds the Guiness World Record for largest bubble gum bubble? (7 points)\n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
-	a: "b"
-	}, //7
-	{q: "What company produced the first bubble gum? (8 points)\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
-	a: "b"
-	}, //8
 	{q: "How long is a roll of Hubba Bubba Bubble Tape? (9 points)\n (a) 8ft \n (b) 10ft \n(c) 6ft",
 	a: "c"
+	}, //3
+	{q: "What company produced the first bubble gum? (8 points)\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
+	a: "b"
+	}, //4
+	{q: "When was bubble gum invented? (1 point)\n (a) 1892 \n (b) 1928 \n (c) 1901",
+	a: "b"
+	}, //5
+	{q: "Who invented bubble gum? \n (a) Theodore Horowitz (5 points)\n (b) Ruth Spiro \n (c) Walter Diemer",
+	a: "c"
+	}, //6
+	{q: "How many tons of gum are chewed every year? (3 points)\n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
+	a: "c"
+	}, //7
+	{q: "What was the diameter of the largest bubble gum bubble ever blown? (6 points)\n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
+	a: "a"
+	}, //8
+	{q: "Who holds the Guiness World Record for largest bubble gum bubble? (7 points)\n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
+	a: "b"
 	}, //9
 	{q: "In 2018, a group of people set the World Record for most people blowing bubble gum simultaneously. How many people were in the group? (10 points)\n (a) 457 \n (b) 881 \n (c) 1002",
 	a: "b"
 	} //10
+
 ];
 
 let questionSection = document.querySelector("#questionSection");
