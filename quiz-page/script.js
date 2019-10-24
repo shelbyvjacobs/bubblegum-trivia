@@ -89,7 +89,6 @@ function checkAnswer () {
 			rightOrWrong.innerText = "Correct!"
 			nextButton.classList.remove("hide");
 			userScore++;
-			// addScore();
 		} else if (response == ""){
 			rightOrWrong.style.color = "black"
 			rightOrWrong.style.fontSize = "40px";
@@ -104,11 +103,6 @@ function checkAnswer () {
 };
 
 checkAnswer();
-
-//score counter
-// function addScore (){
-// 	userScore = userScore + 1;
-// };
 
 //next button
 nextButton.addEventListener("click", function(evt){
@@ -130,7 +124,6 @@ function shareResults() {
 	nextButton.classList.add("hide");
 	results.classList.remove("hide");
 	scoreContainer.classList.remove("hide");
-	// scoreContainer.innerText = "You got " + userScore + "/" + questions.length + " correct. Good job!";
 	scoreContainer.innerText = "You got " + userScore + "/55 points. Good job!";
 	resetButton.classList.remove("hide");
 };
