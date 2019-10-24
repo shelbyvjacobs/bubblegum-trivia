@@ -5,34 +5,34 @@
 // variable response that is empty to collect the user's responses
 //MULTIPLE CHOICE; change to radio buttons? silver level
 const questions =[
-	{q: "1. When was bubble gum invented? \n (a) 1892 \n (b) 1928 \n (c) 1901",
+	{q: "When was bubble gum invented? (1 point)\n (a) 1892 \n (b) 1928 \n (c) 1901",
 	a: "b"
 	}, //1
-	{q: "2. What is the official bubble gum of Major League Baseball? \n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
+	{q: "What is the official bubble gum of Major League Baseball? (2 points)\n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
 	a: "a"
 	}, //2
-	{q: "3. How many tons of gum are chewed every year? \n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
+	{q: "How many tons of gum are chewed every year? (3 points)\n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
 	a: "c"
 	}, //3
-	{q: "4. What came first: chewing gum or bubble gum? \n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
+	{q: "What came first: chewing gum or bubble gum? (4 points)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
 	a: "a"
 	}, //4
-	{q: "5. Who invented bubble gum? \n (a) Theodore Horowitz \n (b) Ruth Spiro \n (c) Walter Diemer",
+	{q: "Who invented bubble gum? \n (a) Theodore Horowitz (5 points)\n (b) Ruth Spiro \n (c) Walter Diemer",
 	a: "c"
 	}, //5
-	{q: "6. What was the diameter of the largest bubble gum bubble ever blown? \n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
+	{q: "What was the diameter of the largest bubble gum bubble ever blown? (6 points)\n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
 	a: "a"
 	}, //6
-	{q: "7. Who holds the Guiness World Record for largest bubble gum bubble? \n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
+	{q: "Who holds the Guiness World Record for largest bubble gum bubble? (7 points)\n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
 	a: "b"
 	}, //7
-	{q: "8. What company produced the first bubble gum? \n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
+	{q: "What company produced the first bubble gum? (8 points)\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
 	a: "b"
 	}, //8
-	{q: "9. How long is a roll of Hubba Bubba Bubble Tape? \n (a) 8ft \n (b) 10ft \n(c) 6ft",
+	{q: "How long is a roll of Hubba Bubba Bubble Tape? (9 points)\n (a) 8ft \n (b) 10ft \n(c) 6ft",
 	a: "c"
 	}, //9
-	{q: "10. In 2018, a group of people set the World Record for most people blowing bubble gum simultaneously. How many people were in the group? \n (a) 457 \n (b) 881 \n (c) 1002",
+	{q: "In 2018, a group of people set the World Record for most people blowing bubble gum simultaneously. How many people were in the group? (10 points)\n (a) 457 \n (b) 881 \n (c) 1002",
 	a: "b"
 	} //10
 ];
@@ -50,6 +50,7 @@ const input = document.querySelector("input");
 const modal = document.querySelector(".modal");
 const instructions = document.querySelector(".instructions");
 let userScore = 0;
+i = 0;
 
 //instructions modal
 instructions.addEventListener("click", function(evt){
@@ -73,31 +74,29 @@ function startGame () {
 	mainGame.classList.remove("hide");
 };
 
-i=0;
-
 //check if the answer is correct or incorrect
 function checkAnswer () {
-	// console.log(questions[index].q)
 	questionSection.innerText = questions[i].q;
 	// input.reset(); //returns not a function
 	rightOrWrong.innerText = "";
-	form.addEventListener("submit", function(evt){
+	form.addEventListener("submit", function(evt){ //logs the response as many times as the index of the question
 		evt.preventDefault();
 		let response = evt.target.querySelector("#response").value;
-		console.log(response); //logs 3 times for each answer
+		console.log(response);
 		if (response.toLowerCase() == questions[i].a){
-			userScore++
 			rightOrWrong.style.color = "#6eff7a"
-			rightOrWrong.style.fontSize = "40px";
+			rightOrWrong.style.fontSize = "60px";
 			rightOrWrong.innerText = "Correct!"
 			nextButton.classList.remove("hide");
+			userScore++;
+			// addScore();
 		} else if (response == ""){
 			rightOrWrong.style.color = "black"
-			rightOrWrong.style.fontSize = "20px";
+			rightOrWrong.style.fontSize = "40px";
 			rightOrWrong.innerText = "Please enter an answer!"
 		} else {
 			rightOrWrong.style.color = "#ff6e6e"
-			rightOrWrong.style.fontSize = "40px";
+			rightOrWrong.style.fontSize = "60px";
 			rightOrWrong.innerText = "Incorrect!"
 			nextButton.classList.remove("hide");
 		}
@@ -106,11 +105,16 @@ function checkAnswer () {
 
 checkAnswer();
 
+//score counter
+// function addScore (){
+// 	userScore = userScore + 1;
+// };
+
 //next button
 nextButton.addEventListener("click", function(evt){
 	evt.preventDefault();
 	i++
-	if (i < questions.length - 1){
+	if (i < questions.length){
 		checkAnswer();
 		console.log(i);
 	} else {
@@ -120,17 +124,19 @@ nextButton.addEventListener("click", function(evt){
 	}
 });
 
+//results page
 function shareResults() {
 	mainGame.classList.add("hide");
 	nextButton.classList.add("hide");
 	results.classList.remove("hide");
-	console.log(scoreContainer);
 	scoreContainer.classList.remove("hide");
-	scoreContainer.innerText = "You got " + userScore + "/" + questions.length + " correct. Good job!";
+	// scoreContainer.innerText = "You got " + userScore + "/" + questions.length + " correct. Good job!";
+	scoreContainer.innerText = "You got " + userScore + "/55 points. Good job!";
 	resetButton.classList.remove("hide");
 };
 
-resetButton.addEventListener("click", resetGame);
-function resetGame () {
+//reset the game (basically just reloads the page)
+resetButton.addEventListener("click", function(evt){
 	location.reload();
-};
+});
+
