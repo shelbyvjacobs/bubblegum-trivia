@@ -6,36 +6,9 @@
 body {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
-	background-color: pink;
-/*	animation-name: zoom;
-	animation-duration: 0.5s;
-	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.5s;
-	-moz-animation-name: zoom;
-	-moz-animation-duration: 0.5s;
-	-o-animation-name: zoom;
-	-o-animation-duration: 0.5s;
+	/*background-color: pink;*/
+	background-image: repeating-linear-gradient(90deg, #ffc0cb, #ffc0cb 50px, #ffd6dd 50px, #ffd6dd 100px);
 }
-
-	@keyframes zoom {
-		from {transform: scale(0)}
-		to {transform: scale(1)}
-	}
-
-	@-webkit-keyframes zoom {
-		from {transform: scale(0)}
-		to {transform: scale(1)}
-	}
-
-	@-moz-keyframes zoom {
-		from {transform: scale(0)}
-		to {transform: scale(1)}
-	}
-
-	@-o-keyframes zoom {
-		from {transform: scale(0)}
-		to {transform: scale(1)}*/
-	}
 
 .card {
 	width: 70%;
