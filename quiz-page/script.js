@@ -43,7 +43,7 @@ let rightOrWrong = document.querySelector("#rightOrWrong");
 const nextButton = document.querySelector(".next");
 const startButton = document.querySelector(".start");
 const mainGame = document.querySelector(".mainGame");
-const resetButton = document.querySelector(".reset");
+const resetButton = document.querySelector(".resetButton");
 const results = document.querySelector(".results");
 let scoreContainer = document.querySelector(".scoreContainer");
 const form = document.querySelector('#form');
@@ -78,7 +78,6 @@ function startGame () {
 //check if the answer is correct or incorrect
 function checkAnswer () {
 	questionSection.innerText = questions[i].q;
-	// input.reset(); //returns not a function
 	rightOrWrong.innerText = "";
 	form.addEventListener("submit", function(evt){ //logs the response as many times as the index of the question
 		evt.preventDefault();
@@ -125,8 +124,12 @@ function shareResults() {
 	nextButton.classList.add("hide");
 	results.classList.remove("hide");
 	scoreContainer.classList.remove("hide");
-	scoreContainer.innerText = "You got " + userScore + "/55 points. Good job!";
 	resetButton.classList.remove("hide");
+	if (userScore >= 30){
+		scoreContainer.innerText = "You got " + userScore + "/55 points. You're unbelievabubble!"
+	} else {
+		scoreContainer.innerText = "Sorry to burst your bubble. You only got " + userScore + "/55 points. "
+	}
 };
 
 //reset the game (basically just reloads the page)
