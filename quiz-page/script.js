@@ -5,7 +5,7 @@
 // variable response that is empty to collect the user's responses
 //MULTIPLE CHOICE; change to radio buttons? silver level
 const questions =[
-	{q: "What came first: chewing gum or bubble gum? (1 points)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
+	{q: "What came first: chewing gum or bubble gum? (1 point)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
 	a: "a"
 	}, //1
 	{q: "What is the official bubble gum of Major League Baseball? (2 points)\n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
@@ -17,7 +17,7 @@ const questions =[
 	{q: "What company produced the first bubble gum? (4 points)\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
 	a: "b"
 	}, //4
-	{q: "When was bubble gum invented? (5 point)\n (a) 1892 \n (b) 1928 \n (c) 1901",
+	{q: "When was bubble gum invented? (5 points)\n (a) 1892 \n (b) 1928 \n (c) 1901",
 	a: "b"
 	}, //5
 	{q: "Who invented bubble gum? (6 points) \n (a) Theodore Horowitz \n (b) Ruth Spiro \n (c) Walter Diemer",
