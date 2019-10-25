@@ -35,7 +35,7 @@ This game was created with HTML, CSS, and Javascript.
 
 ### Getting Started
 
-If you would like to play the game, please click [here]().
+If you would like to play the game, please click [here](https://shelbyvjacobs.github.io/quiz-page/).
 
 ### Contribution Guidelines
 If you would like to contribute code, identify bugs, or propose improvements, please fork this repository and submit a pull request with your suggestions. Below are some helpful links to help you get started:
