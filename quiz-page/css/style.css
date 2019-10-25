@@ -6,7 +6,6 @@
 body {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
-	/*background-color: pink;*/
 	background-image: repeating-linear-gradient(90deg, #ffc0cb, #ffc0cb 50px, #ffd6dd 50px, #ffd6dd 100px);
 }
 
