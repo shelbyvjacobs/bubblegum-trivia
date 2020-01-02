@@ -1,4 +1,4 @@
-# trivia-game
+# bubblegum-trivia
 
 ### Description
 This webpage is a trivia game that tests the users knowledge of bubble gum facts. HTML, CSS, and Javascript were used to create an interactive user experience.
