@@ -15,6 +15,7 @@ I had a few goals for this project:
 There are some improvements that I would like to make in the future:
 * Randomize the questions so that the order they are asked in is different each time.
 * Clear the user's input between questions, so that it doesn't have to be deleted manually.
+* Show whether the answer is correct or incorrect on 'enter' or 'click' of next button.
 
 ### Example
 Below are three screenshots from different points in the game: the start page, an example of one of the questions, and the results page.
