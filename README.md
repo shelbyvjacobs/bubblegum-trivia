@@ -7,14 +7,13 @@ This webpage is a trivia game that tests the users knowledge of bubble gum facts
 I had a few goals for this project:
 * Utilize HTML, CSS, and Javascript.
 * Manipulate the DOM using Javascript in order to create a page that updates based on the user's actions.
+* Randomize the questions so that the order they are asked in is different each time.
 * Hide and reveal questions as the player works through the game.
 * Determine if the user's answers are correct or incorrect
 * Reveal a final score at the end of the game.
 * Make the website responsive, so that it is enjoyable to use regardless of screen size.
 
 There are some improvements that I would like to make in the future:
-* Randomize the questions so that the order they are asked in is different each time.
-* Clear the user's input between questions, so that it doesn't have to be deleted manually.
 * Show whether the answer is correct or incorrect on 'enter' or 'click' of next button.
 
 ### Example
