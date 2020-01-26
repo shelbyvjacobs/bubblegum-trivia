@@ -1,32 +1,32 @@
 const questions =[
-	{q: "What came first: chewing gum or bubble gum? (1 point)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
+	{q: "What came first: chewing gum or bubble gum? \n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
 	a: "a"
 	},
-	{q: "What is the official bubble gum of Major League Baseball? (2 points)\n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
+	{q: "What is the official bubble gum of Major League Baseball? \n (a) Bubble Yum \n (b) Dubble Bubble \n (c) Bazooka",
 	a: "a"
 	},
-	{q: "How long is a roll of Hubba Bubba Bubble Tape? (3 points)\n (a) 8ft \n (b) 10ft \n(c) 6ft",
+	{q: "How long is a roll of Hubba Bubba Bubble Tape?\n (a) 8ft \n (b) 10ft \n(c) 6ft",
 	a: "c"
 	},
-	{q: "What company produced the first bubble gum? (4 points)\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
+	{q: "What company produced the first bubble gum?\n (a) Hubba Bubba \n (b) Dubble Bubble \n (c) Zebra",
 	a: "b"
 	},
-	{q: "When was bubble gum invented? (5 points)\n (a) 1892 \n (b) 1928 \n (c) 1901",
+	{q: "When was bubble gum invented?\n (a) 1892 \n (b) 1928 \n (c) 1901",
 	a: "b"
 	},
-	{q: "Who invented bubble gum? (6 points) \n (a) Theodore Horowitz \n (b) Ruth Spiro \n (c) Walter Diemer",
+	{q: "Who invented bubble gum?\n (a) Theodore Horowitz \n (b) Ruth Spiro \n (c) Walter Diemer",
 	a: "c"
 	},
-	{q: "How many tons of gum are chewed every year? (7 points)\n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
+	{q: "How many tons of gum are chewed every year?\n (a) 10,000 \n (b) 1,000,000 \n (c) 100,000",
 	a: "c"
 	},
-	{q: "What was the diameter of the largest bubble gum bubble ever blown? (8 points)\n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
+	{q: "What was the diameter of the largest bubble gum bubble ever blown?\n (a) 50.8cm \n (b) 47.2in \n (c) 15in",
 	a: "a"
 	},
-	{q: "Who holds the Guiness World Record for largest bubble gum bubble? (9 points)\n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
+	{q: "Who holds the Guiness World Record for largest bubble gum bubble?\n (a) Monica Puller \n (b) Chad Fell \n (c) Susan Mont'Gum'ry Williams",
 	a: "b"
 	},
-	{q: "In 2018, a group of people set the World Record for most people blowing bubble gum simultaneously. How many people were in the group? (10 points)\n (a) 457 \n (b) 881 \n (c) 1002",
+	{q: "In 2018, a group of people set the World Record for most people blowing bubble gum simultaneously. How many people were in the group?\n (a) 457 \n (b) 881 \n (c) 1002",
 	a: "b"
 	}
 
@@ -60,6 +60,18 @@ window.addEventListener("click", function(evt) {
 		modal.style.display = "none";
 	}
 });
+
+//shuffle questions
+function shuffleQuestions(questions) {
+    for (var i = questions.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = questions[i];
+        questions[i] = questions[j];
+        questions[j] = temp;
+    }
+}
+
+shuffleQuestions(questions);
 
 //start the game
 startButton.addEventListener("click", startGame);
@@ -115,8 +127,6 @@ nextButton.addEventListener("click", function(evt){
 		shareResults();
 	}
 });
-
-
 
 //results page
 function shareResults() {
