@@ -76,7 +76,6 @@ function checkAnswer () {
 	form.addEventListener("submit", function(evt){
 		evt.preventDefault();
 		let response = evt.target.querySelector("#response").value;
-		console.log(response);
 		if (response.toLowerCase() == questions[i].a){
 			rightOrWrong.style.color = "#6eff7a"
 			rightOrWrong.style.fontSize = "60px";
@@ -98,19 +97,26 @@ function checkAnswer () {
 
 checkAnswer();
 
+//clear input field
+function clearInput() {
+	if (input.value != '') {
+		input.value = '';
+	};
+}
+
 //next button
 nextButton.addEventListener("click", function(evt){
 	evt.preventDefault();
 	i++
 	if (i < questions.length){
 		checkAnswer();
-		console.log(i);
+		clearInput();
 	} else {
-		console.log(i);
-		console.log("Results page!")
 		shareResults();
 	}
 });
+
+
 
 //results page
 function shareResults() {
@@ -130,4 +136,3 @@ function shareResults() {
 resetButton.addEventListener("click", function(evt){
 	location.reload();
 });
-
