@@ -14,7 +14,7 @@ I had a few goals for this project:
 * Make the website responsive, so that it is enjoyable to use regardless of screen size.
 
 There are some improvements that I would like to make in the future:
-* Show whether the answer is correct or incorrect on 'enter' or 'click' of next button.
+* Change input type to radio buttons to improve usability
 
 ### Example
 Below are three screenshots from different points in the game: the start page, an example of one of the questions, and the results page.
