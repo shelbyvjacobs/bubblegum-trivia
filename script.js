@@ -1,3 +1,10 @@
+/* 
+change questions format for radio buttons
+each potential answer separated by a comma
+the correct answer has it's own index
+	example: 
+	{q: "This is a question?", a1: "Possible answer 1", a2: "Possible answer 2", a3: "Possible answer 3", a4: "Possible answer 4", correct: "a3"}
+*/
 const questions =[
 	{q: "What came first: chewing gum or bubble gum? (Easy)\n (a) chewing gum \n (b) bubble gum \n (c) both were invented at the same time",
 	a: "a"
@@ -88,6 +95,10 @@ function checkAnswer () {
 	form.addEventListener("submit", function(evt){
 		evt.preventDefault();
 		let response = evt.target.querySelector("#response").value;
+		/* 
+		the way the answers are checked has to be changed too
+		response === questions[i].correct
+		*/
 		if (response.toLowerCase() == questions[i].a){
 			rightOrWrong.style.color = "#6eff7a"
 			rightOrWrong.style.fontSize = "60px";
